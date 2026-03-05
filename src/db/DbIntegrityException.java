@@ -1,8 +1,10 @@
 package db;
 
-public class DbIntegrityException extends RuntimeException {
+import java.io.Serial;
 
-    private static final long serialVersionUid = 1L;
+public class DbIntegrityException extends RuntimeException {
+    @Serial
+    private static final long serialVersionUID = 1L;
 
     public DbIntegrityException(String message) {
         super(message);
