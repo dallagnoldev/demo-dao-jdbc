@@ -2,26 +2,14 @@ package application;
 
 import model.dao.DaoFactory;
 import model.dao.SellerDao;
-import model.entities.Department;
 import model.entities.Seller;
-
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 
 public class Main {
     public static void main(String[] args) {
 
-        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-
-        Department department = new Department(1, "Books");
-
-        LocalDate birthDate = LocalDate.parse("18/12/2000", dtf);
-
-        Seller seller = new Seller(21, "Bob", "bob@gmail.com", birthDate, 3000.0, department);
-
         SellerDao sellerDao = DaoFactory.createSellerDao();
-
-        System.out.println(department);
+        Seller seller = sellerDao.findById(3);
         System.out.println(seller);
+
     }
 }
