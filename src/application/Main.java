@@ -44,5 +44,9 @@ public class Main {
         sellerDao.update(seller);
         System.out.println("Update Completed");
 
+        System.out.println("\n=== Test 6: seller delete ===");
+        sellerDao.deleteById(14);
+        System.out.println("User deleted.");
+
     }
 }
