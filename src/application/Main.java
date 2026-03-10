@@ -5,6 +5,8 @@ import model.dao.SellerDao;
 import model.entities.Department;
 import model.entities.Seller;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 public class Main {
@@ -28,6 +30,10 @@ public class Main {
             System.out.println(obj);
         }
 
-
+        System.out.println("\n=== Test 4: seller insert ===");
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        Seller newSeller = new Seller(null, "Greg", "greg@gmail.com", LocalDate.parse("01/01/2000", dtf), 4000.0, new Department(2, null));
+        sellerDao.insert(newSeller);
+        System.out.println("Inserted! New Id: " + newSeller.getId());
     }
 }
